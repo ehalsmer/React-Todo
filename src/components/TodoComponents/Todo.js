@@ -1,4 +1,5 @@
 import React from "react";
+import { Segment, Divider } from 'semantic-ui-react';
 
 const Todo = props => {
   return (
@@ -6,7 +7,8 @@ const Todo = props => {
     onClick={() => props.toggleDone(props.id)}
     className={`todo${props.completed ? " completed" : ""}`}
     >
-    <p>{props.task}</p>
+    <div className="todoItem">{props.task}</div>
+    {/* <Divider /> */}
     </div>
   );
 };

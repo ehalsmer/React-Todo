@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Form, Button, Icon } from "semantic-ui-react";
 
 // build this component as a class so that it can manage its own state
 
@@ -6,42 +7,45 @@ class TodoForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: ""
+      todo: null
     };
   }
 
   handleChanges = e => {
+    e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value
     });
     //   console.log(this.state);
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     // insert function from app.js passed in through props which updates state in app.js
     this.props.addTodo(this.state.todo);
-    // and reset state of form input to empty string
+    // and reset state of Form input to empty string
     this.setState({
-        todo: ""
-    })
+      todo: ""
+    });
   };
 
   render() {
     return (
-      <>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={this.state.todo}
-            name="todo"
-            onChange={this.handleChanges}
-          />
-          <button>Add</button>
-        </form>
-        <button onClick={this.props.clearAll}>Clear All</button>
-        <button onClick={this.props.clearCompleted}>Clear Completed</button>
-      </>
+      <Container>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group>
+            <Form.Input
+              type="text"
+              value={this.state.todo}
+              name="todo"
+              onChange={this.handleChanges}
+            />
+            <Form.Button>Add</Form.Button>
+          </Form.Group>
+        <Button size='small' color='teal' onClick={this.props.clearAll}>Clear All</Button>
+        <Button size='small' color='green' onClick={this.props.clearCompleted}>Clear Completed</Button>
+        </Form>
+      </Container>
     );
   }
 }

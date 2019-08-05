@@ -1,8 +1,10 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import { Container, Header, Divider, Segment } from 'semantic-ui-react';
 
-import "./components/TodoComponents/Todo.css"
+import "semantic-ui-css/semantic.min.css";
+import "./components/TodoComponents/Todo.scss"
 
 // you will need a place to store your state in this component.
 // design `App` to be the parent component of your application.
@@ -48,8 +50,9 @@ class App extends React.Component {
 
   clearCompleted = () => {
     this.setState({
-      todos: this.state.todos.filter((todo)=>todo.completed === false)
+      todos: this.state.todos.filter((item)=>!item.completed && !(item.task == ""))
     })
+    console.log(this.state.todos);
   }
 
   toggleDone = (id) => {
@@ -69,11 +72,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Todo:</h2>
+      <Container text>
+        <Header as="h2">Todo:</Header>
         <TodoForm addTodo={this.addTodo} clearAll={this.clearAll} clearCompleted={this.clearCompleted}/>
+        <Divider horizontal />
         <TodoList todos={this.state.todos} toggleDone={this.toggleDone}/>
-      </div>
+      </Container>
     );
   }
 }
