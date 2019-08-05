@@ -9,23 +9,18 @@ class TodoForm extends React.Component {
     this.state = {
       todo: ""
     };
-    this.handleChanges = this.handleChanges.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChanges = e => {
-    e.preventDefault();
     this.setState({
-      [e.target.name]: e.target.value
+      todo: e.target.value
     });
     //   console.log(this.state);
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    // insert function from app.js passed in through props which updates state in app.js
     this.props.addTodo(this.state.todo);
-    // and reset state of Form input to empty string
     this.setState({
       todo: ""
     });
