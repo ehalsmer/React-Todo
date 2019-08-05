@@ -7,8 +7,10 @@ class TodoForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: null
+      todo: ""
     };
+    this.handleChanges = this.handleChanges.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChanges = e => {

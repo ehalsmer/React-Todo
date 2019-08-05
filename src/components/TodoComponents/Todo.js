@@ -1,9 +1,9 @@
 import React from "react";
-import { Segment, Divider } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 const Todo = props => {
   return (
-    <div 
+    <div
     onClick={() => props.toggleDone(props.id)}
     className={`todo${props.completed ? " completed" : ""}`}
     >
