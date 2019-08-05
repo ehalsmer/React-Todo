@@ -34,7 +34,13 @@ class App extends React.Component {
       completed: false
     }
     this.setState({
-      todos: [...todos, newTodo]
+      todos: [...this.state.todos, newTodo]
+    })
+  }
+
+  clearAll = () => {
+    this.setState({
+      todos: []
     })
   }
 
@@ -42,7 +48,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Todo:</h2>
-        <TodoForm addTodo={this.addTodo}/>
+        <TodoForm addTodo={this.addTodo} clearAll={this.clearAll}/>
         <TodoList todos={this.state.todos}/>
       </div>
     );
