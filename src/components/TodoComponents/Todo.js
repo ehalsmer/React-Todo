@@ -2,12 +2,12 @@ import React from "react";
 
 const Todo = props => {
   return (
-    <>
-      <br />
-      <input type="checkbox" name="completed" value={props.task} />
-      {props.task}
-      <br />
-    </>
+    <div 
+    onClick={() => props.toggleDone(props.id)}
+    className={`todo${props.completed ? " completed" : ""}`}
+    >
+    <p>{props.task}</p>
+    </div>
   );
 };
 
