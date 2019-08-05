@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const Todo = props => {
-    return (
-        <div>
-            {props.task}
-        </div>
-    )
-}
+  return (
+    <>
+      <br />
+      <input type="checkbox" name="completed" value={props.task} />
+      {props.task}
+      <br />
+    </>
+  );
+};
 
 export default Todo;
