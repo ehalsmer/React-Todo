@@ -26,11 +26,23 @@ class App extends React.Component {
       todos: todos
     }
   }
+
+  addTodo = (todoText) => {
+    const newTodo = {
+      task: todoText,
+      id: Date.now(),
+      completed: false
+    }
+    this.setState({
+      todos: [...todos, newTodo]
+    })
+  }
+
   render() {
     return (
       <div>
         <h2>Todo:</h2>
-        <TodoForm />
+        <TodoForm addTodo={this.addTodo}/>
         <TodoList todos={this.state.todos}/>
       </div>
     );
