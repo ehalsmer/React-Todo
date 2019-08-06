@@ -4,19 +4,11 @@ body, html, container {
 
 
 .todoItem {
-    padding: 5px 8px;
-    margin: 8px 0px;
     cursor: pointer;
-    // border: 1px solid #f5f5f5;
-    // background-color: #f5f5f5;
-    border-radius: 4px;
-    box-shadow:  7px 8px 10px -8px rgba(0,0,0,0.52);
-    background-color: white;
 }
 .completed {
     text-decoration: line-through;
     color: lightgrey;
-    box-shadow:  3px 3px 3px -8px rgba(0,0,0,0.52);
 }
 
 #hide {

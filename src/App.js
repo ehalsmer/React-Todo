@@ -42,15 +42,17 @@ class App extends React.Component {
     })
   }
 
-  clearAll = () => {
+  clearAll = (e) => {
+    e.preventDefault();
     this.setState({
       todos: []
     })
   }
 
-  clearCompleted = () => {
+  clearCompleted = (e) => {
+    e.preventDefault();
     this.setState({
-      todos: this.state.todos.filter((item)=>!item.completed && !(item.task == ""))
+      todos: this.state.todos.filter((item)=>!item.completed)
     })
     console.log(this.state.todos);
   }
@@ -72,7 +74,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Container text>
+      <Container>
         <Header as="h2">Todo:</Header>
         <TodoForm addTodo={this.addTodo} clearAll={this.clearAll} clearCompleted={this.clearCompleted}/>
         <Divider horizontal />

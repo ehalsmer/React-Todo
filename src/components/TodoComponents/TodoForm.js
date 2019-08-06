@@ -7,13 +7,13 @@ class TodoForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: ""
+      todo: ''
     };
   }
 
   handleChanges = e => {
     this.setState({
-      todo: e.target.value
+      [e.target.name]: e.target.value
     });
     //   console.log(this.state);
   };
