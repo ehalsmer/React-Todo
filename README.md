@@ -11,12 +11,12 @@ We're going to practice building a stateful class component with this project. E
 
 ## Instructions
 
-[ ] Your job is to write the components to complete the Todo List application.
-[ ] Your todo list should be fully functional and you should design it however you'd like. Feel free to get creative here. I have supplied a gif for you to see what the MVP functionality is.
+[x] Your job is to write the components to complete the Todo List application.
+[/] Your todo list should be fully functional and you should design it however you'd like. Feel free to get creative here. I have supplied a gif for you to see what the MVP functionality is.
 
 ![Todo App MVP](todo.gif)
 
-[ ] Your todo data should be an array of objects that look a lot like this:
+ Your todo data should be an array of objects that look a lot like this:
 
 ```js
 [
@@ -53,10 +53,10 @@ We're going to practice building a stateful class component with this project. E
 
 ---
 
-[ ] Add the functionality to toggle your todo's completed flag from `false` to `true`.
-  [ ] Once a todo is completed, be sure to demonstrate to the user that the todo is completed by adding a line-through style property if the completed flag is true.
-[ ] Add the ability to remove any todos that you have completed. `.filter` will be your best friend here. When a user clicks on the `Clear Completed` button call your handler function that will filter out any todos that have the completed flag toggled to `true`.
-[ ] **Now is the time to style** Take your time to make this an app that you can be proud of.
+[x] Add the functionality to toggle your todo's completed flag from `false` to `true`.
+[x] Once a todo is completed, be sure to demonstrate to the user that the todo is completed by adding a line-through style property if the completed flag is true.
+[x] Add the ability to remove any todos that you have completed. `.filter` will be your best friend here. When a user clicks on the `Clear Completed` button call your handler function that will filter out any todos that have the completed flag toggled to `true`.
+[/] **Now is the time to style** Take your time to make this an app that you can be proud of.
 
 #### Stretch Problems
 

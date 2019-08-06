@@ -54,7 +54,7 @@ class App extends React.Component {
     this.setState({
       todos: this.state.todos.filter((item)=>!item.completed)
     })
-    console.log(this.state.todos);
+    // console.log(this.state.todos);
   }
 
   toggleDone = (id) => {
